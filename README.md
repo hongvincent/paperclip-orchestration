@@ -24,6 +24,20 @@ git clone https://github.com/hongvincent/paperclip-orchestration.git
 git clone https://github.com/hongvincent/paperclip-dev-factory.git
 ```
 
+### 1.5) 가장 쉬운 실행: Dev Factory의 통합 Compose 사용
+
+두 저장소를 같은 상위 디렉터리에 클론했다면, 별도 수동 기동 대신
+`paperclip-dev-factory/docker-compose.stack.yml` 을 바로 사용할 수 있습니다.
+
+```bash
+cd paperclip-dev-factory
+cp .env.example .env
+docker compose -f docker-compose.stack.yml up --build
+```
+
+이 경우 orchestration 서버도 같이 올라오고, Dev Factory가 자동으로
+`http://orchestration:3100` 으로 연결됩니다.
+
 ### 2) 서버 실행
 
 터미널 A:
